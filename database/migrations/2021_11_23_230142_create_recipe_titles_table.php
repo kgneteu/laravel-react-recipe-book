@@ -19,6 +19,7 @@ class CreateRecipeTitlesTable extends Migration
             $table->bigInteger('recipe_id');
             $table->string('language', 2)->default('en');
             $table->unique(['id', 'language']);
+            $table->index(['title']);
         });
         Schema::table('recipe_titles', function (Blueprint $table) {
             $table->foreign(['recipe_id'], 'recipe_titles_recipe_id_fkey')->references(['id'])->on('recipes')->onUpdate('CASCADE')->onDelete('CASCADE');
