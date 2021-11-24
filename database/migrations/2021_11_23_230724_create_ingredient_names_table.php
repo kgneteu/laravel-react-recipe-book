@@ -21,7 +21,7 @@ class CreateIngredientNamesTable extends Migration
             $table->unique(['id', 'language']);
         });
         Schema::table('ingredient_names', function (Blueprint $table) {
-            $table->foreign(['recipe_id'], 'ingredient_names_recipe_id_fkey')->references(['id'])->on('ingredients')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign(['ingredient_id'], 'ingredient_names_recipe_id_fkey')->references(['id'])->on('ingredients')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
