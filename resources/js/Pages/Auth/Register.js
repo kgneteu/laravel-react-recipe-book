@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Button from '@/Components/Button';
 import Guest from '@/Layouts/Guest';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import {Head, Link, useForm} from '@inertiajs/inertia-react';
+import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const {data, setData, post, processing, errors, reset} = useForm({
         name: '',
         email: '',
         password: '',
@@ -32,13 +33,16 @@ export default function Register() {
 
     return (
         <Guest>
-            <Head title="Register" />
+            <Head title="Register"/>
+            <Link href="/" className={'text-center'}>
+                <ApplicationLogo className="w-20 h-20 fill-current text-gray-500"/>
+            </Link>
 
-            <ValidationErrors errors={errors} />
+            <ValidationErrors errors={errors}/>
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="name" value="Name" />
+                    <Label forInput="name" value="Name"/>
 
                     <Input
                         type="text"
@@ -53,7 +57,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="email" value="Email" />
+                    <Label forInput="email" value="Email"/>
 
                     <Input
                         type="email"
@@ -67,7 +71,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label forInput="password" value="Password"/>
 
                     <Input
                         type="password"
@@ -81,7 +85,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password_confirmation" value="Confirm Password" />
+                    <Label forInput="password_confirmation" value="Confirm Password"/>
 
                     <Input
                         type="password"
