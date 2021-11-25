@@ -14,7 +14,7 @@ class CreateRecipeBodiesTable extends Migration
     public function up()
     {
         Schema::create('recipe_bodies', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->text('body', 256);
             $table->bigInteger('recipe_id');
             $table->string('language', 2)->default('en');

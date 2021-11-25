@@ -14,7 +14,7 @@ class CreateRecipeTitlesTable extends Migration
     public function up()
     {
         Schema::create('recipe_titles', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('title', 256);
             $table->bigInteger('recipe_id');
             $table->string('language', 2)->default('en');

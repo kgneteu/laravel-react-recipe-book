@@ -14,7 +14,7 @@ class CreateIngredientNamesTable extends Migration
     public function up()
     {
         Schema::create('ingredient_names', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('name', 256);
             $table->bigInteger('ingredient_id');
             $table->string('language', 2)->default('en');

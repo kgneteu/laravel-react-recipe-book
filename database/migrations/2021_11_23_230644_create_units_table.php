@@ -14,7 +14,7 @@ class CreateUnitsTable extends Migration
     public function up()
     {
         Schema::create('units', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('name')->unique();
             $table->string('type')->default('m');
         });

@@ -14,7 +14,7 @@ class CreateCategoryNamesTable extends Migration
     public function up()
     {
         Schema::create('category_names', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('name', 256);
             $table->bigInteger('category_id');
             $table->string('language', 2)->default('en');
@@ -23,6 +23,19 @@ class CreateCategoryNamesTable extends Migration
         Schema::table('category_names', function (Blueprint $table) {
             $table->foreign(['category_id'], 'category_names_id_fkey')->references(['id'])->on('categories')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
+
+        DB::table('category_names')->insert(
+            ['category_id' => 1, 'name' => 'Beer']
+        );
+        DB::table('category_names')->insert(
+            ['category_id' => 2, 'name' => 'Wine']
+        );
+        DB::table('category_names')->insert(
+            ['category_id' => 3, 'name' => 'Whiskey']
+        );
+        DB::table('category_names')->insert(
+            ['category_id' => 4, 'name' => 'Vodka']
+        );
     }
 
     /**

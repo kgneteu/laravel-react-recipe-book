@@ -27,4 +27,13 @@ class RecipesController extends Controller
     {
         return Inertia::render('Recipes/NewRecipe', []);
     }
+
+    public function post(Request $request): Response
+    {
+        $this->validate($request, [
+            'title' => 'required|string|max:256',
+            'body' => 'required|string',
+        ]);
+        return Inertia::render('Recipes/NewRecipe', []);
+    }
 }

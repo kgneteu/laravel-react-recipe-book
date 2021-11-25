@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "start": "concurrently \"mix watch\" \"php artisan serve\"",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -28,6 +29,7 @@
         "tailwindcss": "^2.1.2"
     },
     "dependencies": {
-        "clsx": "^1.1.1"
+        "clsx": "^1.1.1",
+        "concurrently": "^6.4.0"
     }
 }
