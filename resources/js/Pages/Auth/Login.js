@@ -34,11 +34,6 @@ export default function Login({ status, canResetPassword }) {
     return (
         <Guest>
             <Head title="Log in" />
-            <div className={'content-center'}>
-                <Link href="/" className={'align-center'}>
-                    <ApplicationLogo className="w-20 h-20 text-center text-gray-500"/>
-                </Link>
-            </div>
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <ValidationErrors errors={errors} />

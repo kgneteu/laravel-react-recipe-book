@@ -18,4 +18,14 @@ class Recipe extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function title(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(RecipeTitle::class);
+    }
+
+    public function body(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(RecipeBody::class);
+    }
 }

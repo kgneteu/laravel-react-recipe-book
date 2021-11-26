@@ -37,20 +37,21 @@ function TextArea({name, rows, value, isFocused, required, className, autocomple
                 required={required}
                 className={clsx([className, 'form-control'])}
                 autoComplete={autocomplete}
-                handleChange={handleChange}
+                onChange={handleChange}
                 rows={rows}
             />
         </div>
     )
 }
 
-const NewRecipe = () => {
+const NewRecipe = ({categories,...rest}) => {
     const {data, setData, post, processing, errors, reset} = useForm({
         title: '',
         category: '',
         photo: '',
         body: '',
     });
+    //console.log(categories,rest)
     const onHandleChange = (event) => {
         setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
     };
@@ -73,14 +74,19 @@ const NewRecipe = () => {
                            className={'w-full'}
                            isFocused={true}
                 />
-                <select className="form-select"
-                        handleChange={onHandleChange}
+                <label htmlFor="category" className="form-label">Category</label>
+                <select className="form-control form-select-lg "
+                        onChange={onHandleChange}
                         value={data.category}
+                        name={'category'}
                 >
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value={''}>---</option>
+                    {categories.map(category=>(
+                        <option key={category.name.category_id}
+                                value={category.name.category_id}>
+                            {category.name.name}
+                        </option>
+                    ))}
                 </select>
 
                 <TextArea name={'body'}
@@ -93,11 +99,9 @@ const NewRecipe = () => {
                 <div>
                     <label htmlFor="formFileLg" className="form-label">Large file input example</label>
                     <input className="form-control form-control-lg"
-                           id="formFileLg"
+                           name={'photo'}
                            type="file"
                            accept="image/png, image/gif, image/jpeg"
-                           value={data.photo}
-                           handleChange={onHandleChange}
                     />
                 </div>
                 <div className={'flex justify-end mt-5'}>

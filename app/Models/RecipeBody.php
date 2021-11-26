@@ -12,4 +12,5 @@ class RecipeBody extends Model
     {
         return $this->belongsTo(Recipe::class);
     }
+    public $timestamps = false;
 }

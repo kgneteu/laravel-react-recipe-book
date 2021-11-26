@@ -27,19 +27,13 @@ export default function Register() {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route('register'));
     };
 
     return (
         <Guest>
             <Head title="Register"/>
-            <Link href="/" className={'text-center'}>
-                <ApplicationLogo className="w-20 h-20 fill-current text-gray-500"/>
-            </Link>
-
             <ValidationErrors errors={errors}/>
-
             <form onSubmit={submit}>
                 <div>
                     <Label forInput="name" value="Name"/>

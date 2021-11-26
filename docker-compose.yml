@@ -1,6 +1,16 @@
 version: '3.6'
 
 services:
+    web:
+        build: .
+        ports:
+            - "8000:8000"
+#        command: php artisan serve --host 0.0.0.0
+        working_dir: /usr/src/laravel-react-recipe-book
+        depends_on:
+            -   postgres
+        volumes:
+            - ./:/usr/src/laravel-react-recipe-book
     postgres:
         image: postgres:14
         #    build: ./postgres

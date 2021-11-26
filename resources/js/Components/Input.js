@@ -26,8 +26,7 @@ export default function Input({
                 type={type}
                 name={name}
                 value={value}
-                className={clsx([className,'shadow-sm','form-control-lg'])
-                }
+                className={clsx([className,'form-control form-control-lg'])}
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
