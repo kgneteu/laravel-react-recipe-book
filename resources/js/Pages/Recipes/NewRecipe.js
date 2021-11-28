@@ -45,7 +45,7 @@ function TextArea({name, rows, value, isFocused, required, className, autocomple
 }
 
 const NewRecipe = ({categories,...rest}) => {
-    const {data, setData, post, processing, errors, reset} = useForm({
+    const {data, setData, post, processing, errors, reset, progress} = useForm({
         title: '',
         category: '',
         photo: '',
@@ -59,7 +59,7 @@ const NewRecipe = ({categories,...rest}) => {
     const submit = (e) => {
         e.preventDefault();
         console.log(data)
-        post(route('new_recipe'));
+        post(route('new_recipe_post'));
     };
 
     return (
@@ -102,12 +102,18 @@ const NewRecipe = ({categories,...rest}) => {
                            name={'photo'}
                            type="file"
                            accept="image/png, image/gif, image/jpeg"
+                           onChange={e => setData('photo', e.target.files[0])}
                     />
                 </div>
                 <div className={'flex justify-end mt-5'}>
                     <Button type="submit" className="btn btn-primary btn-lg">Save</Button>
                     <Button type="button" className="btn btn-danger btn-lg ml-3">Cancel</Button>
                 </div>
+                {progress && (
+                    <progress value={progress.percentage} max="100" className={'w-full'}>
+                        {progress.percentage}%
+                    </progress>
+                )}
             </form>
         </Guest>
     );

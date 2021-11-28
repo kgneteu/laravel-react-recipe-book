@@ -1,0 +1,83 @@
+h1, .h1 {
+    @apply font-script6;
+    font-size: 6vw !important;
+}
+
+.menu-item {
+    @apply text-gray-700 no-underline font-menu uppercase;
+    transition: all 500ms ease-out;
+    font-size: 2.2vw;
+    line-height: 2.2vw;
+}
+
+.menu-item:hover {
+    @apply text-black;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.menu-logo {
+    transition: all 500ms ease-out;
+    position: absolute;
+    top: 1.5vw;
+    left: 1.5vw;
+    width: 12vw;
+    z-index: 100;
+}
+
+.menu-logo:hover {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.menu-wrapper {
+    @apply px-6 flex gap-6;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.dialog-box {
+    @apply w-full sm:max-w-md mt-6 p-12 relative;
+}
+
+.dialog-box:after {
+    content: '';
+    @apply w-full h-full absolute top-0 left-0 shadow-lg;
+    @apply rounded-3xl;
+    border: 7px solid #444444;
+    transform: skewY(2deg);
+    z-index: -1;
+}
+
+
+.front-text {
+    @apply font-script3 text-gray-100 absolute transform rotate-12;
+    font-size: 8vw;
+    top: 10vw;
+    left: 8vw;
+}
+
+.front-image {
+    /*clip-path: polygon(10% 1%, 100% 0, 91% 100%, 0% 100%);*/
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+    /*transform: rotate(4deg);*/
+    /*margin-left: -2rem;*/
+    margin-top: -1vw;
+}
+
+.dive-in {
+    @apply p-8 my-8;
+    height: 20rem;
+    clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+}
+
+.last-shot {
+    @apply p-8 my-8;
+    height: 20rem;
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+}
+
+.pager-button {
+    @apply border-gray-800 p-4 rounded-full overflow-hidden no-underline;
+    border-width: 0.5vw;
+    width: 3vw;
+    height: 3vw;
+}

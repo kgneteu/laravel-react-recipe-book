@@ -23,7 +23,7 @@ COPY ./ ./
 RUN npm install
 RUN composer install
 RUN composer global require "laravel/installer=~1.1"
-#RUN mix
+RUN npm run development
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 EXPOSE 8000/tcp
 CMD ["/bin/bash"]

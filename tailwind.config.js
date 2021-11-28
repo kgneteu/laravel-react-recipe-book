@@ -9,9 +9,21 @@ module.exports = {
     ],
 
     theme: {
+        fontFamily: {
+            serif: ['"Concert One"', ...defaultTheme.fontFamily.serif],
+        },
         extend: {
+            animation: ['hover'],
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                menu: ['"Concert One"', ...defaultTheme.fontFamily.sans],
+                script1: ['"Luckiest Guy"'],
+                script2: ['"Ewert"'],
+                script3: ['"Gochi Hand"'],
+                script4: ['"Sancreek"'],
+                script5: ['"Titan One"'],
+                script6: ['"Fredoka One"'],
+                script7: ['"Ubuntu"'],
             },
         },
     },

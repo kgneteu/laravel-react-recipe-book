@@ -4616,25 +4616,35 @@ __webpack_require__.r(__webpack_exports__);
 function Header() {
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.auth;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
-    className: "flex bg-blue-500 justify-end",
+    className: "flex justify-end",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "px-6 py-4 sm:block",
+      className: "menu-wrapper",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
         href: '/',
-        className: "mr-4 text-sm text-gray-700 uppercase",
+        className: "menu-logo",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: '/images/logo.svg'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+        href: '/',
+        className: "menu-item",
         children: "Home"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+        href: route('recipes'),
+        className: "menu-item",
+        children: "Recipes"
       }), auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
         href: route('dashboard'),
-        className: "text-sm text-gray-700 uppercase",
+        className: "menu-item",
         children: "Dashboard"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
           href: route('login'),
-          className: "text-sm text-gray-700 uppercase",
-          children: "Log in"
+          className: "menu-item",
+          children: "Login"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
           href: route('register'),
-          className: "ml-4 text-sm text-gray-700 uppercase",
+          className: "menu-item",
           children: "Register"
         })]
       })]
@@ -4850,7 +4860,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("footer", {
-    className: 'text-center p-2 bg-gray-100 text-gray-500',
+    className: 'text-center p-2 text-gray-800 font-script3 text-lg',
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
       children: "\xA9 2021 by Michael Zdolski. All rights unreserved :-)"
     })
@@ -4876,14 +4886,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function DialogBox(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "dialog-box",
+    children: props.children
+  });
+}
+
 function Guest(_ref) {
   var children = _ref.children;
   //min-h-full h-full flex flex-col sm:justify-center items-center pt-6 sm:pt-0
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "w-full flex flex-col bg-gray-100 justify-center items-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg",
+      className: "w-full flex flex-col justify-center items-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(DialogBox, {
         children: children
       })
     })
@@ -5730,7 +5747,8 @@ var NewRecipe = function NewRecipe(_ref3) {
       post = _useForm.post,
       processing = _useForm.processing,
       errors = _useForm.errors,
-      reset = _useForm.reset; //console.log(categories,rest)
+      reset = _useForm.reset,
+      progress = _useForm.progress; //console.log(categories,rest)
 
 
   var onHandleChange = function onHandleChange(event) {
@@ -5740,7 +5758,7 @@ var NewRecipe = function NewRecipe(_ref3) {
   var submit = function submit(e) {
     e.preventDefault();
     console.log(data);
-    post(route('new_recipe'));
+    post(route('new_recipe_post'));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -5790,7 +5808,10 @@ var NewRecipe = function NewRecipe(_ref3) {
           className: "form-control form-control-lg",
           name: 'photo',
           type: "file",
-          accept: "image/png, image/gif, image/jpeg"
+          accept: "image/png, image/gif, image/jpeg",
+          onChange: function onChange(e) {
+            return setData('photo', e.target.files[0]);
+          }
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: 'flex justify-end mt-5',
@@ -5803,12 +5824,184 @@ var NewRecipe = function NewRecipe(_ref3) {
           className: "btn btn-danger btn-lg ml-3",
           children: "Cancel"
         })]
+      }), progress && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("progress", {
+        value: progress.percentage,
+        max: "100",
+        className: 'w-full',
+        children: [progress.percentage, "%"]
       })]
     })]
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewRecipe);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Recipes/Recipe.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Recipes/Recipe.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Recipe = function Recipe(_ref) {
+  var recipe = _ref.recipe;
+  console.log(recipe); // const [recipe_item] = recipe;
+  // console.log(recipe_item)
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [recipe && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: 'container',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        children: recipe.recipe_title.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: recipe.recipe_body.body
+      })]
+    }), !recipe && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: 'container text-center mt-64 text-red-500',
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        children: "This recipe does not exist!"
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Recipe);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Recipes/RecipeCategory.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/Recipes/RecipeCategory.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function PagerButton(_ref) {
+  var label = _ref.label,
+      href = _ref.href;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    href: href,
+    className: 'pager-button',
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      dangerouslySetInnerHTML: {
+        __html: label
+      }
+    })
+  });
+}
+
+function Pager(_ref2) {
+  var links = _ref2.links;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: 'flex justify-center gap-2 my-4',
+    children: links && links.map(function (link, index) {
+      return link.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PagerButton, {
+        label: link.label,
+        href: link.url
+      }, index) : null;
+    })
+  });
+}
+
+var RecipeCategory = function RecipeCategory(_ref3) {
+  var page = _ref3.page,
+      category = _ref3.category;
+  var recipes = page.data;
+  var links = page.links;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: 'container flex flex-col',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        children: category.name.name
+      }), recipes && recipes.map(function (recipe) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+            children: recipe.recipe_title.title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            children: recipe.recipe_body.body
+          })]
+        }, recipe.id);
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Pager, {
+        links: links
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RecipeCategory);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Recipes/Recipes.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Recipes/Recipes.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Recipes = function Recipes(_ref) {
+  var categories = _ref.categories;
+  console.log(categories);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: 'container mt-5 flex flex-wrap',
+      children: categories && categories.map(function (category) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          href: "/recipes/".concat(category.id),
+          className: 'w-1/2 border-1 shadow-md',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+              children: category.name.name
+            })
+          })
+        }, category.id);
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Recipes);
 
 /***/ }),
 
@@ -5836,12 +6029,27 @@ function Welcome(props) {
   //console.log(props)
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: 'container flex flex-col',
+      className: 'flex flex-col w-full',
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
         title: "Welcome"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+        className: 'relative front-image',
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: '/images/front3.jpg',
+          className: 'w-full'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: 'front-text',
+          children: "not so weak recipes..."
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-          children: "Hello"
+        className: 'dive-in bg-blue-500',
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          children: "DiveInto"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+        className: 'last-shot bg-red-500',
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          children: "Last shot"
         })
       })]
     })
@@ -60090,6 +60298,12 @@ var map = {
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Recipes/NewRecipe": "./resources/js/Pages/Recipes/NewRecipe.js",
 	"./Recipes/NewRecipe.js": "./resources/js/Pages/Recipes/NewRecipe.js",
+	"./Recipes/Recipe": "./resources/js/Pages/Recipes/Recipe.js",
+	"./Recipes/Recipe.js": "./resources/js/Pages/Recipes/Recipe.js",
+	"./Recipes/RecipeCategory": "./resources/js/Pages/Recipes/RecipeCategory.js",
+	"./Recipes/RecipeCategory.js": "./resources/js/Pages/Recipes/RecipeCategory.js",
+	"./Recipes/Recipes": "./resources/js/Pages/Recipes/Recipes.js",
+	"./Recipes/Recipes.js": "./resources/js/Pages/Recipes/Recipes.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };

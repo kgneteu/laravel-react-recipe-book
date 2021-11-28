@@ -10154,6 +10154,11 @@ select {
   }
 }
 
+.animate-0 {
+  -webkit-animation: hover;
+          animation: hover;
+}
+
 .animate-none {
   -webkit-animation: none;
           animation: none;
@@ -22510,16 +22515,44 @@ select {
   vertical-align: text-bottom;
 }
 
+.font-serif {
+  font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.font-menu {
+  font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.font-script1 {
+  font-family: "Luckiest Guy";
+}
+
+.font-script2 {
+  font-family: "Ewert";
+}
+
+.font-script3 {
+  font-family: "Gochi Hand";
+}
+
+.font-script4 {
+  font-family: "Sancreek";
+}
+
+.font-script5 {
+  font-family: "Titan One";
+}
+
+.font-script6 {
+  font-family: "Fredoka One";
+}
+
+.font-script7 {
+  font-family: "Ubuntu";
 }
 
 .text-xs {
@@ -32106,6 +32139,136 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+h1, .h1 {
+  font-family: "Fredoka One";
+  font-size: 6vw !important;
+}
+
+.menu-item {
+  font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  text-decoration: none;
+  transition: all 500ms ease-out;
+  font-size: 2.2vw;
+  line-height: 2.2vw;
+}
+
+.menu-item:hover {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  transform: scale(1.1) rotate(5deg);
+}
+
+.menu-logo {
+  transition: all 500ms ease-out;
+  position: absolute;
+  top: 1.5vw;
+  left: 1.5vw;
+  width: 12vw;
+  z-index: 100;
+}
+
+.menu-logo:hover {
+  transform: scale(1.1) rotate(8deg);
+}
+
+.menu-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.dialog-box {
+  position: relative;
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 3rem;
+}
+
+@media (min-width: 640px) {
+  .dialog-box {
+    max-width: 28rem;
+  }
+}
+
+.dialog-box:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 1.5rem;
+  border: 7px solid #444444;
+  transform: skewY(2deg);
+  z-index: -1;
+}
+
+.front-text {
+  position: absolute;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-rotate: 12deg;
+  font-family: "Gochi Hand";
+  --tw-text-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-text-opacity));
+  font-size: 8vw;
+  top: 10vw;
+  left: 8vw;
+}
+
+.front-image {
+  /*clip-path: polygon(10% 1%, 100% 0, 91% 100%, 0% 100%);*/
+  -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+          clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+  /*transform: rotate(4deg);*/
+  /*margin-left: -2rem;*/
+  margin-top: -1vw;
+}
+
+.dive-in {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  height: 20rem;
+  -webkit-clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+          clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+}
+
+.last-shot {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  height: 20rem;
+  -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+          clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+}
+
+.pager-button {
+  overflow: hidden;
+  border-radius: 9999px;
+  --tw-border-opacity: 1;
+  border-color: rgba(31, 41, 55, var(--tw-border-opacity));
+  padding: 1rem;
+  text-decoration: none;
+  border-width: 0.5vw;
+  width: 3vw;
+  height: 3vw;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -41452,6 +41615,11 @@ select {
 
   .sm\:focus\:scale-y-150:focus {
     --tw-scale-y: 1.5;
+  }
+
+  .sm\:animate-0 {
+    -webkit-animation: hover;
+            animation: hover;
   }
 
   .sm\:animate-none {
@@ -53810,16 +53978,44 @@ select {
     vertical-align: text-bottom;
   }
 
+  .sm\:font-serif {
+    font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
   .sm\:font-sans {
     font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .sm\:font-menu {
+    font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .sm\:font-script1 {
+    font-family: "Luckiest Guy";
+  }
+
+  .sm\:font-script2 {
+    font-family: "Ewert";
+  }
+
+  .sm\:font-script3 {
+    font-family: "Gochi Hand";
+  }
+
+  .sm\:font-script4 {
+    font-family: "Sancreek";
+  }
+
+  .sm\:font-script5 {
+    font-family: "Titan One";
+  }
+
+  .sm\:font-script6 {
+    font-family: "Fredoka One";
+  }
+
+  .sm\:font-script7 {
+    font-family: "Ubuntu";
   }
 
   .sm\:text-xs {
@@ -72742,6 +72938,11 @@ select {
     --tw-scale-y: 1.5;
   }
 
+  .md\:animate-0 {
+    -webkit-animation: hover;
+            animation: hover;
+  }
+
   .md\:animate-none {
     -webkit-animation: none;
             animation: none;
@@ -85098,16 +85299,44 @@ select {
     vertical-align: text-bottom;
   }
 
+  .md\:font-serif {
+    font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
   .md\:font-sans {
     font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .md\:font-menu {
+    font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .md\:font-script1 {
+    font-family: "Luckiest Guy";
+  }
+
+  .md\:font-script2 {
+    font-family: "Ewert";
+  }
+
+  .md\:font-script3 {
+    font-family: "Gochi Hand";
+  }
+
+  .md\:font-script4 {
+    font-family: "Sancreek";
+  }
+
+  .md\:font-script5 {
+    font-family: "Titan One";
+  }
+
+  .md\:font-script6 {
+    font-family: "Fredoka One";
+  }
+
+  .md\:font-script7 {
+    font-family: "Ubuntu";
   }
 
   .md\:text-xs {
@@ -104030,6 +104259,11 @@ select {
     --tw-scale-y: 1.5;
   }
 
+  .lg\:animate-0 {
+    -webkit-animation: hover;
+            animation: hover;
+  }
+
   .lg\:animate-none {
     -webkit-animation: none;
             animation: none;
@@ -116386,16 +116620,44 @@ select {
     vertical-align: text-bottom;
   }
 
+  .lg\:font-serif {
+    font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
   .lg\:font-sans {
     font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .lg\:font-menu {
+    font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .lg\:font-script1 {
+    font-family: "Luckiest Guy";
+  }
+
+  .lg\:font-script2 {
+    font-family: "Ewert";
+  }
+
+  .lg\:font-script3 {
+    font-family: "Gochi Hand";
+  }
+
+  .lg\:font-script4 {
+    font-family: "Sancreek";
+  }
+
+  .lg\:font-script5 {
+    font-family: "Titan One";
+  }
+
+  .lg\:font-script6 {
+    font-family: "Fredoka One";
+  }
+
+  .lg\:font-script7 {
+    font-family: "Ubuntu";
   }
 
   .lg\:text-xs {
@@ -135318,6 +135580,11 @@ select {
     --tw-scale-y: 1.5;
   }
 
+  .xl\:animate-0 {
+    -webkit-animation: hover;
+            animation: hover;
+  }
+
   .xl\:animate-none {
     -webkit-animation: none;
             animation: none;
@@ -147674,16 +147941,44 @@ select {
     vertical-align: text-bottom;
   }
 
+  .xl\:font-serif {
+    font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
   .xl\:font-sans {
     font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .xl\:font-menu {
+    font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .xl\:font-script1 {
+    font-family: "Luckiest Guy";
+  }
+
+  .xl\:font-script2 {
+    font-family: "Ewert";
+  }
+
+  .xl\:font-script3 {
+    font-family: "Gochi Hand";
+  }
+
+  .xl\:font-script4 {
+    font-family: "Sancreek";
+  }
+
+  .xl\:font-script5 {
+    font-family: "Titan One";
+  }
+
+  .xl\:font-script6 {
+    font-family: "Fredoka One";
+  }
+
+  .xl\:font-script7 {
+    font-family: "Ubuntu";
   }
 
   .xl\:text-xs {
@@ -166606,6 +166901,11 @@ select {
     --tw-scale-y: 1.5;
   }
 
+  .\32xl\:animate-0 {
+    -webkit-animation: hover;
+            animation: hover;
+  }
+
   .\32xl\:animate-none {
     -webkit-animation: none;
             animation: none;
@@ -178962,16 +179262,44 @@ select {
     vertical-align: text-bottom;
   }
 
+  .\32xl\:font-serif {
+    font-family: "Concert One", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
   .\32xl\:font-sans {
     font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .\32xl\:font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  .\32xl\:font-menu {
+    font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .\32xl\:font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .\32xl\:font-script1 {
+    font-family: "Luckiest Guy";
+  }
+
+  .\32xl\:font-script2 {
+    font-family: "Ewert";
+  }
+
+  .\32xl\:font-script3 {
+    font-family: "Gochi Hand";
+  }
+
+  .\32xl\:font-script4 {
+    font-family: "Sancreek";
+  }
+
+  .\32xl\:font-script5 {
+    font-family: "Titan One";
+  }
+
+  .\32xl\:font-script6 {
+    font-family: "Fredoka One";
+  }
+
+  .\32xl\:font-script7 {
+    font-family: "Ubuntu";
   }
 
   .\32xl\:text-xs {
@@ -188545,5 +188873,4 @@ select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-
 

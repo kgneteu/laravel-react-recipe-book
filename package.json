@@ -1,12 +1,11 @@
 {
     "private": true,
     "scripts": {
-        "start": "concurrently \"mix watch\" \"php artisan serve\"",
-        "dev": "npm run development",
+        "start": "concurrently \"docker-compose up\" \"mix watch\" \"php artisan serve\"",
+        "dev": "docker-compose up",
         "development": "mix",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "prod": "npm run production",
         "production": "mix --production"
     },
     "devDependencies": {
