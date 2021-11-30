@@ -7,25 +7,23 @@
 
 
 ## Decription <a name="description"></a>
-Movie database written in React. It is a fullstack application that demonstrates the use of several important functionalities:
-- user authorization (with email verification)
-- dashboard that allows you to manage the list of articles and their categories
-- using GMail in the Node
-- infinite scroll and many more
+Website with recipes posted by users.
+
+## Features
+- user authorization
+- dashboard
+
 
 ## Technologies <a name="technologies"></a>
 - PHP7/JavaScript
 - Laravel 8/React 17
-- InertiaJs
-- Progres
+- InertiaJs 
+- Progress 14 (Eloquent ORM)
+- TailwindCSS 2/Bootstrap 5
 
 ## Setup <a name="setup"></a>
 - Clone this repository
-- run <code>npm install</code> in the main project directory
-- change dir to <code>client</code> directory and run <code>npm install</code> again
-- change dir to root directory
-- create <code>.env</code> file and put in it the data described in the config section
-- run npm run dev - to run this project in development mode
+- run <code>docker-compose up</code> in the main project directory
 
 ## Config <a name="config"></a>
 In order to work properly, the project requires setting of several environment variables. We put these variables in the .env file (development environment), and then we have to set them in the production environment (the configuration depends on the server we use).
