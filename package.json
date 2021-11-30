@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "start": "concurrently \"docker-compose up\" \"mix watch\" \"php artisan serve\"",
+        "local dev start": "concurrently \"docker-compose up\" \"mix watch\" \"php artisan serve\"",
         "dev": "docker-compose up",
         "development": "mix",
         "watch": "mix watch",

@@ -32144,6 +32144,11 @@ h1, .h1 {
   font-size: 6vw !important;
 }
 
+h2, .h2 {
+  font-family: "Fredoka One";
+  font-size: 2vw !important;
+}
+
 .menu-item {
   font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
@@ -32164,9 +32169,9 @@ h1, .h1 {
 .menu-logo {
   transition: all 500ms ease-out;
   position: absolute;
-  top: 1.5vw;
-  left: 1.5vw;
-  width: 12vw;
+  top: 1vw;
+  left: 1vw;
+  width: 10vw;
   z-index: 100;
 }
 
@@ -32267,6 +32272,57 @@ h1, .h1 {
   border-width: 0.5vw;
   width: 3vw;
   height: 3vw;
+}
+
+.recipe-categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem;
+}
+
+.recipe-categories-box {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+
+.recipe-categories-box-inner{
+  transition: all ease-in 2000ms;
+}
+
+.recipe-categories-box-inner:hover{
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1
+}
+
+.recipe-categories-wrapper a{
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+}
+
+.recipe-categories-wrapper a:hover {
+  --tw-text-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-text-opacity));
+}
+
+.recipe-categories-wrapper a {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 640px) {

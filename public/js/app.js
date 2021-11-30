@@ -4616,7 +4616,7 @@ __webpack_require__.r(__webpack_exports__);
 function Header() {
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.auth;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
-    className: "flex justify-end",
+    className: "flex justify-end mb-16",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "menu-wrapper",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
@@ -5883,6 +5883,67 @@ var Recipe = function Recipe(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Recipes/RecipeCategories.js":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Recipes/RecipeCategories.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var RecipeCategories = function RecipeCategories(_ref) {
+  var categories = _ref.categories;
+  console.log(categories);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: 'container',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        children: "Recipes"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: 'recipe-categories-wrapper',
+        children: categories && categories.map(function (category) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: 'recipe-categories-box',
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: 'recipe-categories-box-inner',
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                href: "/recipes/".concat(category.id),
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                    src: "/images/categories/".concat(category.id, ".jpg"),
+                    title: category.name.name,
+                    alt: category.name.name
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+                    className: 'absolute text-white-800 z-10 top-8 left-8',
+                    children: category.name.name
+                  })]
+                })
+              }, category.id)
+            })
+          });
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RecipeCategories);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Recipes/RecipeCategory.js":
 /*!******************************************************!*\
   !*** ./resources/js/Pages/Recipes/RecipeCategory.js ***!
@@ -5943,10 +6004,18 @@ var RecipeCategory = function RecipeCategory(_ref3) {
         children: category.name.name
       }), recipes && recipes.map(function (recipe) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: 'mt-5',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
             children: recipe.recipe_title.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            children: recipe.recipe_body.body
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: 'flex gap-8',
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              className: 'w-1/2',
+              src: recipe.photo.file_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: 'w-1/2',
+              children: recipe.recipe_body.body
+            })]
           })]
         }, recipe.id);
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Pager, {
@@ -5957,51 +6026,6 @@ var RecipeCategory = function RecipeCategory(_ref3) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RecipeCategory);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Recipes/Recipes.js":
-/*!***********************************************!*\
-  !*** ./resources/js/Pages/Recipes/Recipes.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var Recipes = function Recipes(_ref) {
-  var categories = _ref.categories;
-  console.log(categories);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: 'container mt-5 flex flex-wrap',
-      children: categories && categories.map(function (category) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          href: "/recipes/".concat(category.id),
-          className: 'w-1/2 border-1 shadow-md',
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-              children: category.name.name
-            })
-          })
-        }, category.id);
-      })
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Recipes);
 
 /***/ }),
 
@@ -60300,10 +60324,10 @@ var map = {
 	"./Recipes/NewRecipe.js": "./resources/js/Pages/Recipes/NewRecipe.js",
 	"./Recipes/Recipe": "./resources/js/Pages/Recipes/Recipe.js",
 	"./Recipes/Recipe.js": "./resources/js/Pages/Recipes/Recipe.js",
+	"./Recipes/RecipeCategories": "./resources/js/Pages/Recipes/RecipeCategories.js",
+	"./Recipes/RecipeCategories.js": "./resources/js/Pages/Recipes/RecipeCategories.js",
 	"./Recipes/RecipeCategory": "./resources/js/Pages/Recipes/RecipeCategory.js",
 	"./Recipes/RecipeCategory.js": "./resources/js/Pages/Recipes/RecipeCategory.js",
-	"./Recipes/Recipes": "./resources/js/Pages/Recipes/Recipes.js",
-	"./Recipes/Recipes.js": "./resources/js/Pages/Recipes/Recipes.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };

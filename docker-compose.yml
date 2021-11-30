@@ -4,14 +4,19 @@ services:
     app:
         build: .
         ports:
-            - "8000:8000"
-#        command: php artisan serve --host 0.0.0.0
-        working_dir: /usr/src/laravel-react-recipe-book
+            - "9000:9000"
         depends_on:
             - postgres
-            - web
+        tty: true
         volumes:
-            - ./:/usr/src/laravel-react-recipe-book
+            - ./:/var/www/html
+        environment:
+            DB_CONNECTION: pgsql
+            DB_HOST: postgres
+            DB_PORT: 5432
+            DB_DATABASE: recipe-book
+            DB_USERNAME: chef
+            DB_PASSWORD: SUPERsecret!!!:-)
     postgres:
         image: postgres:14
         #    build: ./postgres
@@ -25,8 +30,9 @@ services:
     web:
         image: nginx:latest
         ports:
-            - "8888:80"
+            - "8000:80"
+        depends_on:
+            - app
         volumes:
-            - ./public:/code
+            - ./public:/var/www/html/public
             - ./site.conf:/etc/nginx/conf.d/default.conf:ro
-

@@ -18,7 +18,7 @@ class RecipesController extends Controller
     public function index(): Response
     {
         $categories = Category::all();
-        return Inertia::render('Recipes/Recipes', ['categories' => $categories]);
+        return Inertia::render('Recipes/RecipeCategories', ['categories' => $categories]);
     }
 
 

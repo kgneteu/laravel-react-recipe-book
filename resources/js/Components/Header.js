@@ -4,7 +4,7 @@ import React from "react";
 export function Header() {
     const {auth} = usePage().props;
     return (
-        <header className="flex justify-end">
+        <header className="flex justify-end mb-16">
             <div className="menu-wrapper">
                 <Link href={'/'} className="menu-logo"><img src={'/images/logo.svg'}/></Link>
                 <Link href={'/'} className="menu-item">Home</Link>

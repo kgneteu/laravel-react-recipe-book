@@ -3,6 +3,11 @@ h1, .h1 {
     font-size: 6vw !important;
 }
 
+h2, .h2 {
+    @apply font-script6;
+    font-size: 2vw !important;
+}
+
 .menu-item {
     @apply text-gray-700 no-underline font-menu uppercase;
     transition: all 500ms ease-out;
@@ -18,9 +23,9 @@ h1, .h1 {
 .menu-logo {
     transition: all 500ms ease-out;
     position: absolute;
-    top: 1.5vw;
-    left: 1.5vw;
-    width: 12vw;
+    top: 1vw;
+    left: 1vw;
+    width: 10vw;
     z-index: 100;
 }
 
@@ -81,3 +86,26 @@ h1, .h1 {
     width: 3vw;
     height: 3vw;
 }
+
+.recipe-categories-wrapper {
+  @apply flex flex-wrap p-3 gap-4 justify-between;
+}
+.recipe-categories-box {
+    @apply relative overflow-hidden box-border;
+    flex-basis: 40%;
+    flex-grow: 1;
+}
+
+.recipe-categories-box-inner{
+    transition: all ease-in 2000ms;
+}
+
+.recipe-categories-box-inner:hover{
+    @apply transform scale-110
+}
+
+.recipe-categories-wrapper a{
+    @apply text-gray-300 hover:text-gray-100;
+    @apply transition-all duration-1000 ease-in-out;
+}
+

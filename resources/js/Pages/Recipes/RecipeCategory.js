@@ -24,15 +24,17 @@ function Pager({links}) {
 const RecipeCategory = ({page, category}) => {
     const recipes = page.data;
     const links = page.links;
-
     return (
         <Layout>
             <div className={'container flex flex-col'}>
                 <h1>{category.name.name}</h1>
                 {recipes && recipes.map(recipe => (
-                    <div key={recipe.id}>
+                    <div key={recipe.id} className={'mt-5'}>
                         <h2>{recipe.recipe_title.title}</h2>
-                        <p>{recipe.recipe_body.body}</p>
+                        <div className={'flex gap-8'}>
+                            <img className={'w-1/2'} src={recipe.photo.file_name}/>
+                            <div className={'w-1/2'}>{recipe.recipe_body.body}</div>
+                        </div>
                     </div>
                 ))}
                <Pager links={links}/>
