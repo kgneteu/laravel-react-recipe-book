@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import Button from '@/Components/Button';
-import Checkbox from '@/Components/Checkbox';
+import Button from '@/Components/UI/Button';
+import Checkbox from '@/Components/UI/Checkbox';
 import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import Label from '@/Components/Label';
+import Input from '@/Components/UI/Input';
+import Label from '@/Components/UI/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
-import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -32,7 +31,7 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <Guest>
+        <Guest title={'Log in'}>
             <Head title="Log in" />
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 

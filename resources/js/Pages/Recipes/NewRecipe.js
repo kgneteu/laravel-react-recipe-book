@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Guest from "@/Layouts/Guest";
-import Input from "@/Components/Input";
-import Label from "@/Components/Label";
+import Input from "@/Components/UI/Input";
+import Label from "@/Components/UI/Label";
 import {useForm} from "@inertiajs/inertia-react";
 import clsx from "clsx";
-import Button from "@/Components/Button";
+import Button from "@/Components/UI/Button";
 import ValidationErrors from "@/Components/ValidationErrors";
 
 function FormInput({name, type, value, isFocused, required, className, autocomplete, handleChange, title}) {

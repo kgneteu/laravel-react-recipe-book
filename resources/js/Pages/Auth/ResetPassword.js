@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import Button from '@/Components/Button';
+import Button from '@/Components/UI/Button';
 import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import Label from '@/Components/Label';
+import Input from '@/Components/UI/Input';
+import Label from '@/Components/UI/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, useForm } from '@inertiajs/inertia-react';
 
@@ -31,7 +31,7 @@ export default function ResetPassword({ token, email }) {
     };
 
     return (
-        <Guest>
+        <Guest title={"Reset password"}>
             <Head title="Reset Password" />
 
             <ValidationErrors errors={errors} />

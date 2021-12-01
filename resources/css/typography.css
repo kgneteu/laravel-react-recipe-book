@@ -1,0 +1,17 @@
+h1, .h1, h1 a {
+    @apply font-title text-gray-800 no-underline;
+    font-size: 6vw !important;
+}
+
+h2, .h2, h2 a {
+    @apply font-title text-gray-800 no-underline;
+    font-size: 2vw !important;
+}
+
+h1 a, h2 a , a.h1, a.h2 {
+    @apply no-underline;
+}
+
+h1 a:hover, h2 a:hover , a.h1:hover, a.h2:hover {
+    @apply text-black;
+}

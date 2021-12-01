@@ -11,7 +11,7 @@ export const Categories = ({categories}) => (
                             <img src={`/images/categories/${category.id}.jpg`}
                                  title={category.name.name}
                                  alt={category.name.name}/>
-                            <h2 className={'absolute text-white-800 z-10 top-8 left-8'}>{category.name.name}</h2>
+                            <h2 className={'absolute text-white-800 z-10 top-8 left-8 font-outlined'}>{category.name.name}</h2>
                         </div>
                     </Link>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import {Head} from '@inertiajs/inertia-react';
 import Layout from "@/Layouts/Layout";
 import {Categories} from "@/Components/Categories";
-import {LastRecipes} from "@/Pages/LastRecipes";
+import {LastRecipes} from "@/Components/UI/LastRecipes";
 
 export default function Welcome({categories, recipes}) {
     return (

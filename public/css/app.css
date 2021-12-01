@@ -743,6 +743,8 @@ select {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 640px) {
@@ -32119,14 +32121,33 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-h1, .h1 {
+h1, .h1, h1 a {
   font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+  text-decoration: none;
   font-size: 6vw !important;
 }
 
-h2, .h2 {
+h2, .h2, h2 a {
   font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+  text-decoration: none;
   font-size: 2vw !important;
+}
+
+h1 a, h2 a, a.h1, a.h2 {
+  text-decoration: none;
+}
+
+h1 a:hover, h2 a:hover, a.h1:hover, a.h2:hover {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+.font-outlined {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .menu-item {
@@ -32237,18 +32258,6 @@ h2, .h2 {
   /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 }
 
-.pager-button {
-  overflow: hidden;
-  border-radius: 9999px;
-  --tw-border-opacity: 1;
-  border-color: rgba(31, 41, 55, var(--tw-border-opacity));
-  padding: 1rem;
-  text-decoration: none;
-  border-width: 0.5vw;
-  width: 3vw;
-  height: 3vw;
-}
-
 .recipe-categories-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -32300,9 +32309,41 @@ h2, .h2 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.pager {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.pager-button {
+  border-radius: 9999px;
+  --tw-border-opacity: 1;
+  border-color: rgba(31, 41, 55, var(--tw-border-opacity));
+  padding: 1rem;
+  text-decoration: none;
+  border-width: 6px;
+  line-height: 2.3rem;
+  font-size: 1.2rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0 0;
+  text-align: center;
+  transition: all 500ms ease-out;
+}
+
+.pager-button:hover {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  transform: scale(1.1) rotate(8deg);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -63604,6 +63645,8 @@ h2, .h2 {
 @media (min-width: 768px) {
   .md\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -94905,6 +94948,8 @@ h2, .h2 {
 @media (min-width: 1024px) {
   .lg\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -126206,6 +126251,8 @@ h2, .h2 {
 @media (min-width: 1280px) {
   .xl\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -157507,6 +157554,8 @@ h2, .h2 {
 @media (min-width: 1536px) {
   .\32xl\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {

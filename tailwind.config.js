@@ -21,6 +21,9 @@ module.exports = {
                 title: ['"Fredoka One"', ...defaultTheme.fontFamily.sans],
             },
         },
+        container: {
+            center: true,
+        },
     },
 
     variants: {

@@ -13,7 +13,7 @@ export const LastRecipes = ({recipes}) => {
                                 <img src={`${recipe.photo.file_name}`}
                                      alt={recipe.recipe_title.title}
                                 />
-                                <h2 className={'absolute text-white-800 z-10 top-8 left-8'}>{recipe.recipe_title.title}</h2>
+                                <h2 className={'absolute text-white-800 z-10 top-8 left-8 font-outlined'}>{recipe.recipe_title.title}</h2>
                             </div>
                         </Link>
                     </div>
