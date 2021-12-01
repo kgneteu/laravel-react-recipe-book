@@ -10,13 +10,6 @@ services:
         tty: true
         volumes:
             - ./:/var/www/html
-        environment:
-            DB_CONNECTION: pgsql
-            DB_HOST: postgres
-            DB_PORT: 5432
-            DB_DATABASE: recipe-book
-            DB_USERNAME: chef
-            DB_PASSWORD: SUPERsecret!!!:-)
     postgres:
         image: postgres:14
         #    build: ./postgres

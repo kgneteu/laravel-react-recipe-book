@@ -32171,7 +32171,7 @@ h2, .h2 {
   position: absolute;
   top: 1vw;
   left: 1vw;
-  width: 10vw;
+  width: 7vw;
   z-index: 100;
 }
 
@@ -32236,30 +32236,25 @@ h2, .h2 {
 }
 
 .front-image {
-  /*clip-path: polygon(10% 1%, 100% 0, 91% 100%, 0% 100%);*/
-  -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
-          clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
-  /*transform: rotate(4deg);*/
-  /*margin-left: -2rem;*/
+  /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
   margin-top: -1vw;
 }
 
 .dive-in {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 2rem;
-  height: 20rem;
-  -webkit-clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
-          clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  /*clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);*/
+  /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 }
 
 .last-shot {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 2rem;
-  height: 20rem;
-  -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
-          clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+  padding-top: 8rem;
+  padding-bottom: 9rem;
+  /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 }
 
 .pager-button {
