@@ -22527,32 +22527,12 @@ select {
   font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-script1 {
-  font-family: "Luckiest Guy";
-}
-
-.font-script2 {
-  font-family: "Ewert";
-}
-
-.font-script3 {
+.font-hand {
   font-family: "Gochi Hand";
 }
 
-.font-script4 {
-  font-family: "Sancreek";
-}
-
-.font-script5 {
-  font-family: "Titan One";
-}
-
-.font-script6 {
-  font-family: "Fredoka One";
-}
-
-.font-script7 {
-  font-family: "Ubuntu";
+.font-title {
+  font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .text-xs {
@@ -32140,12 +32120,12 @@ select {
 }
 
 h1, .h1 {
-  font-family: "Fredoka One";
+  font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 6vw !important;
 }
 
 h2, .h2 {
-  font-family: "Fredoka One";
+  font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2vw !important;
 }
 
@@ -54041,32 +54021,12 @@ h2, .h2 {
     font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-script1 {
-    font-family: "Luckiest Guy";
-  }
-
-  .sm\:font-script2 {
-    font-family: "Ewert";
-  }
-
-  .sm\:font-script3 {
+  .sm\:font-hand {
     font-family: "Gochi Hand";
   }
 
-  .sm\:font-script4 {
-    font-family: "Sancreek";
-  }
-
-  .sm\:font-script5 {
-    font-family: "Titan One";
-  }
-
-  .sm\:font-script6 {
-    font-family: "Fredoka One";
-  }
-
-  .sm\:font-script7 {
-    font-family: "Ubuntu";
+  .sm\:font-title {
+    font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .sm\:text-xs {
@@ -85362,32 +85322,12 @@ h2, .h2 {
     font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-script1 {
-    font-family: "Luckiest Guy";
-  }
-
-  .md\:font-script2 {
-    font-family: "Ewert";
-  }
-
-  .md\:font-script3 {
+  .md\:font-hand {
     font-family: "Gochi Hand";
   }
 
-  .md\:font-script4 {
-    font-family: "Sancreek";
-  }
-
-  .md\:font-script5 {
-    font-family: "Titan One";
-  }
-
-  .md\:font-script6 {
-    font-family: "Fredoka One";
-  }
-
-  .md\:font-script7 {
-    font-family: "Ubuntu";
+  .md\:font-title {
+    font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .md\:text-xs {
@@ -116683,32 +116623,12 @@ h2, .h2 {
     font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-script1 {
-    font-family: "Luckiest Guy";
-  }
-
-  .lg\:font-script2 {
-    font-family: "Ewert";
-  }
-
-  .lg\:font-script3 {
+  .lg\:font-hand {
     font-family: "Gochi Hand";
   }
 
-  .lg\:font-script4 {
-    font-family: "Sancreek";
-  }
-
-  .lg\:font-script5 {
-    font-family: "Titan One";
-  }
-
-  .lg\:font-script6 {
-    font-family: "Fredoka One";
-  }
-
-  .lg\:font-script7 {
-    font-family: "Ubuntu";
+  .lg\:font-title {
+    font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .lg\:text-xs {
@@ -148004,32 +147924,12 @@ h2, .h2 {
     font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-script1 {
-    font-family: "Luckiest Guy";
-  }
-
-  .xl\:font-script2 {
-    font-family: "Ewert";
-  }
-
-  .xl\:font-script3 {
+  .xl\:font-hand {
     font-family: "Gochi Hand";
   }
 
-  .xl\:font-script4 {
-    font-family: "Sancreek";
-  }
-
-  .xl\:font-script5 {
-    font-family: "Titan One";
-  }
-
-  .xl\:font-script6 {
-    font-family: "Fredoka One";
-  }
-
-  .xl\:font-script7 {
-    font-family: "Ubuntu";
+  .xl\:font-title {
+    font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .xl\:text-xs {
@@ -179325,32 +179225,12 @@ h2, .h2 {
     font-family: "Concert One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .\32xl\:font-script1 {
-    font-family: "Luckiest Guy";
-  }
-
-  .\32xl\:font-script2 {
-    font-family: "Ewert";
-  }
-
-  .\32xl\:font-script3 {
+  .\32xl\:font-hand {
     font-family: "Gochi Hand";
   }
 
-  .\32xl\:font-script4 {
-    font-family: "Sancreek";
-  }
-
-  .\32xl\:font-script5 {
-    font-family: "Titan One";
-  }
-
-  .\32xl\:font-script6 {
-    font-family: "Fredoka One";
-  }
-
-  .\32xl\:font-script7 {
-    font-family: "Ubuntu";
+  .\32xl\:font-title {
+    font-family: "Fredoka One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .\32xl\:text-xs {

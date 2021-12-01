@@ -4908,7 +4908,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("footer", {
-    className: 'text-center p-2 text-gray-800 font-script3 text-lg',
+    className: 'text-center p-2 text-gray-800 font-hand text-lg',
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
       children: "\xA9 2021 by Michael Zdolski. All rights unreserved :-)"
     })

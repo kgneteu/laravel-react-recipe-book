@@ -19,7 +19,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Concert+One&family=Ewert&family=Fredoka+One&family=Gochi+Hand&family=Luckiest+Guy&family=Sancreek&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&family=Gochi+Hand&family=Nunito:wght@300;400;700;900&display=swap" rel="stylesheet">
     </head>
     <body class="font-sans antialiased">
         @inertia

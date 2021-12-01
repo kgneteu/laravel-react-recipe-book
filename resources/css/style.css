@@ -1,10 +1,10 @@
 h1, .h1 {
-    @apply font-script6;
+    @apply font-title;
     font-size: 6vw !important;
 }
 
 h2, .h2 {
-    @apply font-script6;
+    @apply font-title;
     font-size: 2vw !important;
 }
 
@@ -54,7 +54,7 @@ h2, .h2 {
 
 
 .front-text {
-    @apply font-script3 text-gray-100 absolute transform rotate-12;
+    @apply font-hand text-gray-100 absolute transform rotate-12;
     font-size: 8vw;
     top: 10vw;
     left: 8vw;
