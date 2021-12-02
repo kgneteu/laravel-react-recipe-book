@@ -1,50 +1,14 @@
 import React from 'react';
-
-import Guest from "@/Layouts/Guest";
-import Input from "@/Components/UI/Input";
-import Label from "@/Components/UI/Label";
 import {useForm} from "@inertiajs/inertia-react";
-import clsx from "clsx";
 import Button from "@/Components/UI/Button";
 import ValidationErrors from "@/Components/ValidationErrors";
+import WideLayout from "@/Layouts/WideLayout";
+import {TextArea} from "@/Components/UI/TextArea";
+import {FormInput} from "@/Components/UI/FormInput";
+import Label from "@/Components/UI/Label";
+import {ImageUpload} from "@/Components/UI/ImageUpload";
 
-function FormInput({name, type, value, isFocused, required, className, autocomplete, handleChange, title}) {
-    return (
-        <div>
-            <Label forInput={name} value={title} className={'form-label'}/>
-            <Input
-                name={name}
-                type={type}
-                value={value}
-                isFocused={isFocused}
-                required={required}
-                className={clsx([className])}
-                autoComplete={autocomplete}
-                handleChange={handleChange}
-            />
-        </div>
-    )
-}
-
-function TextArea({name, rows, value, isFocused, required, className, autocomplete, handleChange, title}) {
-    return (
-        <div>
-            <Label forInput={name} value={title} className={'form-label'}/>
-            <textarea
-                name={name}
-                value={value}
-                autoFocus={isFocused}
-                required={required}
-                className={clsx([className, 'form-control'])}
-                autoComplete={autocomplete}
-                onChange={handleChange}
-                rows={rows}
-            />
-        </div>
-    )
-}
-
-const NewRecipe = ({categories,...rest}) => {
+const NewRecipe = ({categories, ...rest}) => {
     const {data, setData, post, processing, errors, reset, progress} = useForm({
         title: '',
         category: '',
@@ -63,8 +27,8 @@ const NewRecipe = ({categories,...rest}) => {
     };
 
     return (
-        <Guest>
-            <ValidationErrors errors={errors} />
+        <WideLayout title={"New recipe"}>
+            <ValidationErrors errors={errors}/>
             <form onSubmit={submit} className={'flex flex-col gap-y-5'}>
 
                 <FormInput name={'title'}
@@ -74,21 +38,22 @@ const NewRecipe = ({categories,...rest}) => {
                            className={'w-full'}
                            isFocused={true}
                 />
-                <label htmlFor="category" className="form-label">Category</label>
-                <select className="form-control form-select-lg "
-                        onChange={onHandleChange}
-                        value={data.category}
-                        name={'category'}
-                >
-                    <option value={''}>---</option>
-                    {categories.map(category=>(
-                        <option key={category.name.category_id}
-                                value={category.name.category_id}>
-                            {category.name.name}
-                        </option>
-                    ))}
-                </select>
-
+                <div>
+                    <Label htmlFor="category" className="form-label">Category</Label>
+                    <select className="form-control form-select-lg w-full"
+                            onChange={onHandleChange}
+                            value={data.category}
+                            name={'category'}
+                    >
+                        <option value={''}>---</option>
+                        {categories.map(category => (
+                            <option key={category.name.category_id}
+                                    value={category.name.category_id}>
+                                {category.name.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <TextArea name={'body'}
                           title={'Recipe'}
                           value={data.body}
@@ -96,18 +61,10 @@ const NewRecipe = ({categories,...rest}) => {
                           className={'w-full'}
                           rows={6}
                 />
-                <div>
-                    <label htmlFor="formFileLg" className="form-label">Large file input example</label>
-                    <input className="form-control form-control-lg"
-                           name={'photo'}
-                           type="file"
-                           accept="image/png, image/gif, image/jpeg"
-                           onChange={e => setData('photo', e.target.files[0])}
-                    />
-                </div>
+                <ImageUpload onChange={e => setData('photo', e.target.files[0])} name="photo" title="Photo"
+                             className={'w-full'}/>
                 <div className={'flex justify-end mt-5'}>
                     <Button type="submit" className="btn btn-primary btn-lg">Save</Button>
-                    <Button type="button" className="btn btn-danger btn-lg ml-3">Cancel</Button>
                 </div>
                 {progress && (
                     <progress value={progress.percentage} max="100" className={'w-full'}>
@@ -115,7 +72,7 @@ const NewRecipe = ({categories,...rest}) => {
                     </progress>
                 )}
             </form>
-        </Guest>
+        </WideLayout>
     );
 };
 

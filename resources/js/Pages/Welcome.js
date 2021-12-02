@@ -16,13 +16,13 @@ export default function Welcome({categories, recipes}) {
                         ... not so weak recipes ...
                     </span>
                 </section>
-                <section className={'dive-in bg-gray-100'}>
-                    <div className={'container text-right'}>
+                <section className={'dive-in'}>
+                    <div className={'container'}>
                         <h2>Dive in</h2>
                         <Categories categories={categories}/>
                     </div>
                 </section>
-                <section className={'last-shot bg-gray-100'}>
+                <section className={'last-shot'}>
                     <div className={'container'}>
                         <h2>Last shots</h2>
                         <LastRecipes recipes={recipes}/>

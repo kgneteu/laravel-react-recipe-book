@@ -1,17 +1,33 @@
-h1, .h1, h1 a {
-    @apply font-title text-gray-800 no-underline;
-    font-size: 6vw !important;
+
+.font-h1 {
+    @apply text-6xl md:text-8xl lg:text-9xl
+    /*@apply my-8;*/
+}
+
+h1, .h1 {
+    @apply font-title text-gray-800 no-underline font-h1;
+}
+
+h1 a {
+    @apply text-gray-700;
+    transition: all ease-in 500ms;
+}
+
+.font-h2 {
+    @apply  text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl;
 }
 
 h2, .h2, h2 a {
-    @apply font-title text-gray-800 no-underline;
-    font-size: 2vw !important;
+    @apply font-title text-gray-800 no-underline font-h2;
+    /*font-size: 3rem !important;*/
+
 }
 
-h1 a, h2 a , a.h1, a.h2 {
+h1 a, h2 a, a.h1, a.h2 {
     @apply no-underline;
 }
 
-h1 a:hover, h2 a:hover , a.h1:hover, a.h2:hover {
+h1 a:hover, h2 a:hover, a.h1:hover, a.h2:hover {
     @apply text-black;
 }
+

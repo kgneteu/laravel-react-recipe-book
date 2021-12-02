@@ -1,0 +1,43 @@
+
+.menu-item {
+    @apply text-gray-700 no-underline font-menu uppercase font-h2;
+    transition: all 500ms ease-out;
+    line-height: 2.8rem;
+}
+
+.menu-item:hover {
+    @apply text-black;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.menu-logo {
+    @apply w-20 top-8 left-8 lg:w-28 lg:top-4 lg:left-4;
+    transition: all 500ms ease-out;
+    position: absolute;
+    /*top: 1vw;*/
+    /*left: 1vw;*/
+    /*width: 6.8rem;*/
+    z-index: 100;
+}
+
+.menu-logo:hover {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.menu-wrapper {
+    @apply px-6 flex gap-6;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#main-menu {
+    @apply hidden lg:flex;
+}
+
+#mobile-menu {
+  @apply block lg:hidden;
+}
+
+#top-navi {
+    min-height: 4rem;
+}

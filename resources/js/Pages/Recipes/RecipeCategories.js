@@ -7,7 +7,9 @@ const RecipeCategories = ({categories}) => {
         <Layout>
             <div className={'container'}>
                 <h1>Recipes</h1>
-                <Categories categories={categories}/>
+                <div className={'my-16'}>
+                    <Categories categories={categories}/>
+                </div>
             </div>
         </Layout>
     )

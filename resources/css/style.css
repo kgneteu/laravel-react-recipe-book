@@ -1,42 +1,17 @@
 @import 'typography.css';
+@import 'menu.css';
 
 .font-outlined {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.menu-item {
-    @apply text-gray-700 no-underline font-menu uppercase;
-    transition: all 500ms ease-out;
-    font-size: 2.2vw;
-    line-height: 2.2vw;
-}
-
-.menu-item:hover {
-    @apply text-black;
-    transform: scale(1.1) rotate(5deg);
-}
-
-.menu-logo {
-    transition: all 500ms ease-out;
-    position: absolute;
-    top: 1vw;
-    left: 1vw;
-    width: 7vw;
-    z-index: 100;
-}
-
-.menu-logo:hover {
-    transform: scale(1.1) rotate(8deg);
-}
-
-.menu-wrapper {
-    @apply px-6 flex gap-6;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-}
 
 .dialog-box {
     @apply w-full sm:max-w-md mt-6 p-12 relative;
+}
+
+.dialog-box.wide {
+    @apply sm:max-w-2xl;
 }
 
 .dialog-box:after {
@@ -60,40 +35,100 @@
 
     /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 
-    margin-top: -1vw;
+    /*margin-top: -1vw;*/
 }
 
 .dive-in {
-    @apply py-32 my-8;
+    @apply my-8 mt-16;
     /*clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);*/
     /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 }
 
 .last-shot {
-    @apply pt-32 pb-36 my-8;
+    @apply my-8;
     /*clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);*/
 }
 
 
 .recipe-categories-wrapper {
-  @apply flex flex-wrap p-3 gap-4 justify-between;
+    @apply flex flex-wrap justify-between;
 }
+
 .recipe-categories-box {
-    @apply relative overflow-hidden box-border;
-    flex-basis: 40%;
-    flex-grow: 1;
+    @apply relative overflow-hidden box-border w-full lg:w-1/2 mb-4 lg:-mr-4;
+    /*flex-basis: 40%;*/
+    /*flex-grow: 1;*/
 }
 
-.recipe-categories-box-inner{
+.recipe-categories-box-inner {
     transition: all ease-in 2000ms;
+    @apply text-gray-400;
 }
 
-.recipe-categories-box-inner:hover{
-    @apply transform scale-110
+.recipe-categories-box-inner:hover {
+    @apply transform scale-110 hover:text-white;
+    @apply text-white;
 }
 
-.recipe-categories-wrapper a{
+.recipe-categories-wrapper a {
     @apply text-gray-300 hover:text-gray-100;
     @apply transition-all duration-1000 ease-in-out;
 }
+
+input[type=file]::-webkit-file-upload-button {
+    @apply text-white bg-gray-800 hover:bg-black font-medium text-sm cursor-pointer border-0 py-2.5 pl-8 pr-4;
+    margin-inline-start: -1rem;
+    margin-inline-end: 1rem;
+}
+
+.image-upload {
+    @apply block w-full cursor-pointer bg-gray-50 border border-gray-700 text-gray-900 text-sm;
+}
+
+.image-upload:focus {
+    border-color: #3764e6;
+    outline: 1px solid #3764e6;
+}
+
+.image-inner-title {
+    @apply absolute z-10 top-12 left-12 font-outlined;
+    @apply font-title no-underline font-h2;
+}
+
+.recipe-image-wrapper {
+    position: relative;
+    display:block;
+    overflow:hidden;
+}
+
+.recipe-image-wrapper::after {
+    @apply font-outlined font-title font-h2;
+    content: 'Read more...';
+    text-align: center;
+    color: beige;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    z-index: 10;
+    transition: all 500ms ease-in;
+    opacity: 0;
+}
+
+.recipe-image-wrapper:hover:after {
+    opacity: 1;
+}
+
+.recipe-image-wrapper img {
+    transition: all 500ms ease-in;
+}
+.recipe-image-wrapper:hover img {
+    @apply filter blur;
+}
+
+/*body {*/
+/*    @apply bg-red-500 sm:bg-red-100 md:bg-white;*/
+/*}*/
 

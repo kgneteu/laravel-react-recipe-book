@@ -7,12 +7,10 @@ export const Categories = ({categories}) => (
             <div className={'recipe-categories-box'}  key={category.id}>
                 <div className={'recipe-categories-box-inner'}>
                     <Link href={`/recipes/${category.id}`}>
-                        <div>
                             <img src={`/images/categories/${category.id}.jpg`}
                                  title={category.name.name}
                                  alt={category.name.name}/>
-                            <h2 className={'absolute text-white-800 z-10 top-8 left-8 font-outlined'}>{category.name.name}</h2>
-                        </div>
+                            <span className={'image-inner-title'}>{category.name.name}</span>
                     </Link>
                 </div>
             </div>
