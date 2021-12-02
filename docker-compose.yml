@@ -8,8 +8,8 @@ services:
         depends_on:
             - postgres
         tty: true
-        volumes:
-            - ./:/var/www/html
+#        volumes:
+#            - ./:/var/www/html
     postgres:
         image: postgres:14
         #    build: ./postgres

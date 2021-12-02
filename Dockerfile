@@ -30,6 +30,7 @@ RUN npm install
 RUN composer install
 RUN composer global require "laravel/installer=~1.1"
 RUN npm run development
+RUN php artisan migrate:fresh --seed
 EXPOSE 9000/tcp
 #ENTRYPOINT npm run watch-poll
 CMD ["php-fpm"]
