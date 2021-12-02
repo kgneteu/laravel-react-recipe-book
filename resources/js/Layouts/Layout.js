@@ -1,4 +1,4 @@
-import {Header} from "@/Components/header";
+import {Header} from "@/Components/Header";
 import React, {useEffect} from "react";
 import Footer from "@/Layouts/Footer";
 import {usePage} from "@inertiajs/inertia-react";
