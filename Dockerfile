@@ -25,9 +25,10 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 WORKDIR /var/www/html
 COPY --chown=www-data:www-data ./ ./
-RUN npm install
-RUN composer install
-RUN composer global require "laravel/installer=~1.1"
+RUN cp .env.example .env
+# RUN npm install
+# RUN composer install
+# RUN composer global require "laravel/installer=~1.1"
 #RUN npm run development
 EXPOSE 9000/tcp
 #ENTRYPOINT npm run watch-poll
