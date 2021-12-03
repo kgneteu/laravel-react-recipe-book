@@ -1,0 +1,42 @@
+version: '3.6'
+
+services:
+    app:
+        build: https://github.com/kgneteu/laravel-react-recipe-book.git#main
+        ports:
+            - "9000:9000"
+        depends_on:
+            - postgres
+        tty: true
+        volumes:
+            - webdata:/var/www/html
+            - pgdata:/var/www/html/docker/postgres
+            - ngconf:/var/www/html/docker/nginx
+    postgres:
+        image: postgres:14
+        #    build: ./postgres
+        volumes:
+            - pgdata:/docker-entrypoint-initdb.d
+        environment:
+            POSTGRES_USER: chef
+            POSTGRES_PASSWORD: SUPERsecret!!!:-)
+            POSTGRES_DB: recipe-book
+            POSTGRES_HOST: postgres
+        ports:
+            - "5432:5432"
+    web:
+        image: nginx:1.21.4
+        ports:
+            - "8000:80"
+        depends_on:
+            - app
+        volumes:
+            - webdata:/var/www/html
+            - ngconf:/etc/nginx/conf.d
+volumes:
+    webdata:
+        external: false
+    pgdata:
+        external: false
+    ngconf:
+        external: false
